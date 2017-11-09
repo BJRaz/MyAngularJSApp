@@ -1,0 +1,4 @@
+# this is gitignore
+
+node_modules/*
+.vscode/*
