@@ -4,12 +4,22 @@
         <title>
             Anguar JS test TYPESCRIPT            
         </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     </head>
     <body>
-        Hej {{10 + 20}}
-        <br>
-        <test></test>
-
+        <div class="container"  ng-controller="AppController">
+                Hej "scope.x": {{10 + x}}
+                <br>
+                <test></test>
+        
+                <table class="table table-responsive">
+                    <tr ng-repeat="item in $items">
+                        <td>{{item.name}}</td>
+                        <td>{{item.lastname}}</td>
+                    </tr>
+                </table>
+        </div>
+        
         <script src="node_modules/angular/angular.min.js"></script>
         <script src="app/app.js"></script>
         <script src="app/controllers/mycontroller.js"></script>
