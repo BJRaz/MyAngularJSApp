@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var MyApp;
 (function (MyApp) {
     var Controllers;
@@ -29,5 +30,5 @@ var MyApp;
         }());
         Controllers.TestController = TestController;
     })(Controllers = MyApp.Controllers || (MyApp.Controllers = {}));
-})(MyApp || (MyApp = {}));
-angular.module("MyApp.Controllers").controller("mycontroller", MyApp.Controllers.TestController);
+})(MyApp = exports.MyApp || (exports.MyApp = {}));
+// 

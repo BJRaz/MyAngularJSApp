@@ -1,4 +1,4 @@
-namespace MyApp.Controllers {
+export namespace MyApp.Controllers {
 
     export class TestController {
         x: any = 10;
@@ -29,4 +29,4 @@ namespace MyApp.Controllers {
 
 }
 
-angular.module("MyApp.Controllers").controller("mycontroller", MyApp.Controllers.TestController);
+//
