@@ -6,27 +6,14 @@
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <script src="node_modules/systemjs/dist/system.src.js"></script>
-        <script>
-                SystemJS.config({
-                    baseURL: "/",
-                    map: {
-                        app: "app",
-                        "controllers/mycontroller": "app/controllers/mycontroller.js",
-                        "directives/test": "app/directives/test.js",
-                        angular: "node_modules/angular/angular.js"
-                    },
-                    meta: {
-                        "node_modules/angular/angular.js":{
-                            format: "global",
-                            exports: "angular"    
-                        }
-                    }
-                });
-            </script>
+        <script src="system.config.js"></script>
+      
     </head>
     <body>
-        <div class="container"  ng-controller="AppController">
+        <div class="container"  ng-controller="appcontroller">
                 Hej "scope.x": {{10 + x}}
+                <br>
+                Brian {{x}}
                 <br>
                 <test></test>
         

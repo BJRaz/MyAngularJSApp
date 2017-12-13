@@ -1,35 +1,14 @@
 import * as angular from "angular";
-import { MyApp } from "controllers/mycontroller";
+import { MyController } from "controllers/my.controller";
+import { AppController } from "controllers/app.controller";
+import { TestDirectiveFactory } from "directives/test";
 
+angular.module("MyApp.Controllers", [])
+    .controller("mycontroller",  MyController)
+    .controller("appcontroller", AppController);
 
-angular.module("MyApp.Controllers", []);
+angular.module("MyApp.Directives", [])
+    .directive("test", TestDirectiveFactory);;
 
-var app = angular.module("app", ["MyApp.Controllers"]);
+var app = angular.module("app", ["MyApp.Controllers", "MyApp.Directives"]);
 
-angular.module("MyApp.Controllers").controller("mycontroller", MyApp.Controllers.TestController);
-
-angular.module("MyApp.Controllers").controller("AppController", ["$scope", ($scope : any) => {
-    $scope.appname = "Brians app";
-    $scope.x = 1000;
-
-    $scope.$items = [
-        {name: "Brian", lastname:"Rasmussen"}, 
-        {name: "Jane", lastname: "Hansen"}
-    ];
-
-    $scope.$watch(() => {
-        console.log("Digest called");
-    });
-
-}]);
-
-angular.module("MyApp.Controllers").directive("test", () => {
-    return {
-        template : "<button ng-click='vm.click()' class='btn btn-default'>Tryk</button><b><input type='text' ng-model='vm.x'/></b>",
-        restrict : "E",
-        controller: "mycontroller",
-        controllerAs: "vm"
-        ,
-        scope : {}  // isolate scope
-    };
-});
