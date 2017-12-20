@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var AppController = /** @class */ (function () {
-    function AppController($scope) {
+class AppController {
+    constructor($scope) {
         this.$scope = $scope;
         $scope.appname = "Brians app";
         $scope.x = 1000;
@@ -9,11 +9,10 @@ var AppController = /** @class */ (function () {
             { name: "Brian", lastname: "Rasmussen" },
             { name: "Jane", lastname: "Hansen" }
         ];
-        $scope.$watch(function () {
+        $scope.$watch(() => {
             console.log("Digest called");
         });
     }
-    AppController.$injector = ["$scope"];
-    return AppController;
-}());
+}
+AppController.$injector = ["$scope"];
 exports.AppController = AppController;

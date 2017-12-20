@@ -1,14 +1,7 @@
 import * as angular from "angular";
-import { MyController } from "controllers/my.controller";
-import { AppController } from "controllers/app.controller";
-import { TestDirectiveFactory } from "directives/test";
 
-angular.module("MyApp.Controllers", [])
-    .controller("mycontroller",  MyController)
-    .controller("appcontroller", AppController);
+import { AppModule } from "app.module";
 
-angular.module("MyApp.Directives", [])
-    .directive("test", TestDirectiveFactory);;
+AppModule.init();
 
-var app = angular.module("app", ["MyApp.Controllers", "MyApp.Directives"]);
-
+console.log(angular.module("app"));
