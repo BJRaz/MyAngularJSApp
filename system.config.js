@@ -23,12 +23,6 @@ SystemJS.config({
         }
     },
     packages:{
-        "controllers": {
-            defaultExtension:"js"
-        },
-        "directives":{
-            defaultExtension:"js"
-        },
         ".":{
             defaultExtension: "js"
         }
