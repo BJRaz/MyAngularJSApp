@@ -6,17 +6,20 @@ SystemJS.config({
         "directives:*": "app/directives/*"
     },
     map: {
-        app: "app",
          "controllers/my.controller": "controllers:my.controller.js",
          "app.controller": "app:app.controller.js",
          "directives/test": "directives:test.js",
          "app.module": "app:app.module.js",
-        angular: "node_modules/angular/angular.js"
+        angular: "node_modules/angular/angular.js",
+        "@uirouter/angularjs": "node_modules/@uirouter/angularjs/release/angular-ui-router.js"
     },
     meta: {
         "node_modules/angular/angular.js":{
             format: "global",
             exports: "angular"    
+        },
+        "node_modules/@uirouter/angularjs/release/angular-ui-router.js": {           
+            deps: "node_modules/angular/angular.js"
         }
     }
 });

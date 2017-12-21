@@ -10,6 +10,7 @@
       
     </head>
     <body>
+        <base href="/" />
         <div class="container"  ng-controller="appcontroller">
                 Hej "scope.x": {{10 + x}}
                 <br>
@@ -17,6 +18,8 @@
                 <br>
                 <test></test>
         
+                <div ui-view></div>
+
                 <table class="table table-responsive">
                     <tr ng-repeat="item in $items">
                         <td>{{item.name}}</td>
