@@ -10,7 +10,7 @@ SystemJS.config({
         //  "app.controller": "app:app.controller.js",
         //  "directives/test": "directives:test.js",
         //"app.module": "app:app.module.js",
-        angular: "/node_modules/angular/angular.js",
+        "angular": "/node_modules/angular/angular.js",
         "@uirouter/angularjs": "/node_modules/@uirouter/angularjs/release/angular-ui-router.js"
     },
     meta: {
@@ -19,7 +19,7 @@ SystemJS.config({
             exports: "angular"    
         },
         "/node_modules/@uirouter/angularjs/release/angular-ui-router.js": {           
-            deps: "/node_modules/angular/angular.js"
+            deps: "angular"
         }
     },
     packages:{
