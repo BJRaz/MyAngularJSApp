@@ -1,5 +1,5 @@
 SystemJS.config({
-    baseURL: "/app",
+    baseURL: "/",
     // paths: {
     //     "app:*": "*",
     //     "controllers:*": "app/controllers/*",
