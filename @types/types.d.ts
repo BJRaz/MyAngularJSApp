@@ -1,1 +1,1 @@
-declare let angular : ng.IAngularStatic;
+//declare let angular : ng.IAngularStatic;

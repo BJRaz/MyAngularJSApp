@@ -1,4 +1,4 @@
-import { AppModule } from "./app/app.module";
+import { AppModule } from "app/app.module";
 
 AppModule.init();
 

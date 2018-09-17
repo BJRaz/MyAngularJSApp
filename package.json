@@ -4,7 +4,8 @@
   "description": "Dette er en test for at bygge en angularjs app med typescript i vscode",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hest": "echo hest"
   },
   "author": "Brian Juul Rasmussen",
   "license": "ISC",
@@ -13,7 +14,7 @@
     "@uirouter/angularjs": "^1.0.11",
     "angular": "^1.6.6",
     "live-server": "^1.2.0",
-    "systemjs": "^0.19.47",
+    "systemjs": "^0.21.4",
     "typescript": "^2.6.1"
   }
 }

@@ -19,7 +19,7 @@ SystemJS.config({
             exports: "angular"    
         },
         "/node_modules/@uirouter/angularjs/release/angular-ui-router.js": {           
-            deps: "angular"
+            deps: ["angular"]
         }
     },
     packages:{

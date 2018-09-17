@@ -1,4 +1,4 @@
-import { MyService } from "../services/my.service";
+import { MyService } from "app/services/my.service";
 import { IHttpService, IQService } from "angular";
 
 export class MyController {
