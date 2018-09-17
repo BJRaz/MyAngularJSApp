@@ -1,12 +1,12 @@
 import * as angular from "angular"
-import { PhoneListController } from "./phone-list/phone-list.component";
-import { AppController } from "app/app.controller";
+import { PhoneListController, PhoneListComponent } from "./components/phone-list.component";
+import { AppController } from "./app.controller";
 
 import * as uirouter from "@uirouter/angularjs";
 
 import "@uirouter/angularjs"    // force loads ui.router module
-import { MyController } from "app/controllers/my.controller";
-import { TestDirectiveFactory } from "app/directives/test.directive";
+import { MyController } from "./controllers/my.controller";
+import { TestDirectiveFactory } from "./directives/test.directive";
 
 
 // import { TestDirectiveFactory } from "./directives/test";
@@ -24,7 +24,10 @@ export class AppModule
             .controller("mycontroller", MyController);
         angular.module("myapp.directives", [])
             .directive("test", TestDirectiveFactory);
-        var app = angular.module("app", ["ui.router", "myapp.controllers", "myapp.directives"])
+
+        angular.module("myapp.components", []).component("phoneListComponent", PhoneListComponent);
+
+        var app = angular.module("app", ["ui.router", "myapp.controllers", "myapp.directives", "myapp.components"])
             .controller("appcontroller", AppController);
 
         app.config(($stateProvider: uirouter.StateProvider, 

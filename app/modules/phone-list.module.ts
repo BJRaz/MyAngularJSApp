@@ -1,4 +1,4 @@
-import { PhoneListController, PhoneListComponent } from "./phone-list.component";
+import { PhoneListController, PhoneListComponent } from "app/components/phone-list.component";
 import * as angular from "angular";
 //import * as template from "./phone-list.component.html";
 
