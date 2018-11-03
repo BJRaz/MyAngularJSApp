@@ -7,12 +7,11 @@ import * as uirouter from "@uirouter/angularjs";
 import "@uirouter/angularjs"    // force loads ui.router module
 import { MyController } from "./controllers/my.controller";
 import { TestDirectiveFactory } from "./directives/test.directive";
+import { NavbarComponent } from "./components/navbar.component";
+import { PhoneListModule } from "./modules/phone-list.module";
 
 
 // import { TestDirectiveFactory } from "./directives/test";
-// import { PhoneListModule } from "./phone-list/phone-list.module";
-//import { PhoneListComponent } from "./phone-list/phone-list.module"
-
 export let x = 8660;
 
 export class AppModule
@@ -25,9 +24,12 @@ export class AppModule
         angular.module("myapp.directives", [])
             .directive("test", TestDirectiveFactory);
 
-        angular.module("myapp.components", []).component("phoneListComponent", PhoneListComponent);
+        angular.module("myapp.components", [])
+            .component("phoneListComponent", PhoneListComponent)
+            .component("navbarComponent", NavbarComponent);
+    
 
-        var app = angular.module("app", ["ui.router", "myapp.controllers", "myapp.directives", "myapp.components"])
+        var app = angular.module("app", ["ui.router", "myapp.controllers", "myapp.directives", "myapp.components", PhoneListModule.name])
             .controller("appcontroller", AppController);
 
         app.config(($stateProvider: uirouter.StateProvider, 
