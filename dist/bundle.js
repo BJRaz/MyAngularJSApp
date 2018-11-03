@@ -45830,6 +45830,7 @@ exports.AppController = AppController;
 Object.defineProperty(exports, "__esModule", { value: true });
 const angular = __webpack_require__(/*! angular */ "./node_modules/angular/index.js");
 __webpack_require__(/*! @uirouter/angularjs */ "./node_modules/@uirouter/angularjs/release/ui-router-angularjs.js"); // force loads ui.router module
+const phone_list_component_1 = __webpack_require__(/*! ./components/phone-list.component */ "./src/app/components/phone-list.component.ts");
 const my_controller_1 = __webpack_require__(/*! ./controllers/my.controller */ "./src/app/controllers/my.controller.ts");
 const app_controller_1 = __webpack_require__(/*! ./app.controller */ "./src/app/app.controller.ts");
 const test_1 = __webpack_require__(/*! ./directives/test */ "./src/app/directives/test.ts");
@@ -45837,9 +45838,11 @@ exports.x = 8660;
 class AppModule {
     static init() {
         angular.module("myapp.controllers", [])
-            .controller("mycontroller", my_controller_1.MyController);
+            .controller("mycontroller", my_controller_1.MyController)
+            .controller("phonelistcontroller", phone_list_component_1.PhoneListController);
         angular.module("myapp.directives", [])
             .directive("test", test_1.TestDirectiveFactory);
+        angular.module("myapp.components", []).component("phoneListComponent", phone_list_component_1.PhoneListComponent);
         var app = angular.module("app", [
             "ui.router",
             "myapp.controllers",
@@ -45875,6 +45878,37 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css"); // for at inkludere bootstrap i webpacks bundle...
 const app_module_1 = __webpack_require__(/*! ./app.module */ "./src/app/app.module.ts");
 app_module_1.AppModule.init();
+
+
+/***/ }),
+
+/***/ "./src/app/components/phone-list.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/components/phone-list.component.ts ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+class PhoneListController {
+    constructor() {
+        this.name = "Brian";
+    }
+    $onInit() {
+        console.log("COMPONENT onInit has been called " + this.name);
+    }
+}
+exports.PhoneListController = PhoneListController;
+// CDO Component Definition Object.
+exports.PhoneListComponent = {
+    templateUrl: "app/components/phone-list.component.html",
+    controller: PhoneListController,
+    bindings: {
+        value: '='
+    }
+};
 
 
 /***/ }),

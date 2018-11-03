@@ -5,11 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "build": "tsc -p tsconfig.json;webpack --config webpack.config.js",
-
     "hest": "echo hest"
-
   },
   "author": "Brian Juul Rasmussen",
   "license": "ISC",
@@ -18,16 +15,13 @@
     "@types/requirejs": "^2.1.31",
     "@uirouter/angularjs": "^1.0.11",
     "angular": "^1.6.6",
-
     "bootstrap": "^4.1.3",
     "html-loader": "^0.5.5",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.4",
-    "ts-loader": "^5.3.0",
-
     "live-server": "^1.2.0",
+    "popper.js": "^1.14.4",
     "systemjs": "^0.21.4",
-
+    "ts-loader": "^5.3.0",
     "typescript": "^2.6.1"
   },
   "devDependencies": {
