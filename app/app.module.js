@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const angular = require("angular");
 require("@uirouter/angularjs"); // force loads ui.router module
-const my_controller_1 = require("controllers/my.controller");
-const app_controller_1 = require("app.controller");
-const test_1 = require("directives/test");
+const my_controller_1 = require("./controllers/my.controller");
+const app_controller_1 = require("./app.controller");
+const test_1 = require("./directives/test");
 exports.x = 8660;
 class AppModule {
     static init() {

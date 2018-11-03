@@ -2,9 +2,9 @@ import * as angular from "angular"
 import "@uirouter/angularjs"    // force loads ui.router module
 import * as uirouter from "@uirouter/angularjs";
 
-import { MyController } from "controllers/my.controller";
-import { AppController } from "app.controller";
-import { TestDirectiveFactory } from "directives/test";
+import { MyController } from "./controllers/my.controller";
+import { AppController } from "./app.controller";
+import { TestDirectiveFactory } from "./directives/test";
 
 export let x = 8660;
 

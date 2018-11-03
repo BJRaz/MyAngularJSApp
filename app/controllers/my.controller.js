@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const my_service_1 = require("services/my.service");
+const my_service_1 = require("../services/my.service");
 class MyController {
     constructor($scope, $http, $q) {
         this.$scope = $scope;
