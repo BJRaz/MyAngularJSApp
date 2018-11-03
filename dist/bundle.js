@@ -45834,6 +45834,7 @@ const phone_list_component_1 = __webpack_require__(/*! ./components/phone-list.c
 const my_controller_1 = __webpack_require__(/*! ./controllers/my.controller */ "./src/app/controllers/my.controller.ts");
 const app_controller_1 = __webpack_require__(/*! ./app.controller */ "./src/app/app.controller.ts");
 const test_1 = __webpack_require__(/*! ./directives/test */ "./src/app/directives/test.ts");
+const navbar_component_1 = __webpack_require__(/*! ./components/navbar.component */ "./src/app/components/navbar.component.ts");
 exports.x = 8660;
 class AppModule {
     static init() {
@@ -45842,11 +45843,14 @@ class AppModule {
             .controller("phonelistcontroller", phone_list_component_1.PhoneListController);
         angular.module("myapp.directives", [])
             .directive("test", test_1.TestDirectiveFactory);
-        angular.module("myapp.components", []).component("phoneListComponent", phone_list_component_1.PhoneListComponent);
+        angular.module("myapp.components", [])
+            .component("navbarComponent", navbar_component_1.NavbarComponent)
+            .component("phoneListComponent", phone_list_component_1.PhoneListComponent);
         var app = angular.module("app", [
             "ui.router",
             "myapp.controllers",
-            "myapp.directives"
+            "myapp.directives",
+            "myapp.components"
         ])
             .controller("appcontroller", app_controller_1.AppController);
         app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {
@@ -45882,6 +45886,56 @@ app_module_1.AppModule.init();
 
 /***/ }),
 
+/***/ "./src/app/components/navbar.component.html":
+/*!**************************************************!*\
+  !*** ./src/app/components/navbar.component.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n        <li class=\"nav-item active\">\n            <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"#\">Link</a>\n        </li>\n        <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            Dropdown\n            </a>\n            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\n            <div class=\"dropdown-divider\"></div>\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\n            </div>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n        </li>\n        </ul>\n        <form class=\"form-inline my-2 my-lg-0\">\n        <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n        </form>\n    </div>\n</nav>\n<!-- BJR -->\n";
+
+/***/ }),
+
+/***/ "./src/app/components/navbar.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/components/navbar.component.ts ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+class NavbarController {
+    constructor() {
+    }
+    $onInit() {
+        console.log("Navbar COMPONENT onInit has been called ");
+    }
+}
+exports.NavbarController = NavbarController;
+// CDO Component Definition Object. BJR
+exports.NavbarComponent = {
+    template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/components/navbar.component.html"),
+    //templateUrl: "app/components/navbar.component.html", // BAD - not relative...
+    controller: NavbarController
+};
+
+
+/***/ }),
+
+/***/ "./src/app/components/phone-list.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/components/phone-list.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<table class=\"table table-responsive\">\n    <tr ng-repeat=\"item in $ctrl.value\">\n        <td>{{item.name}}</td>\n        <td>{{item.lastname}}</td>\n    </tr>\n</table>";
+
+/***/ }),
+
 /***/ "./src/app/components/phone-list.component.ts":
 /*!****************************************************!*\
   !*** ./src/app/components/phone-list.component.ts ***!
@@ -45903,7 +45957,8 @@ class PhoneListController {
 exports.PhoneListController = PhoneListController;
 // CDO Component Definition Object.
 exports.PhoneListComponent = {
-    templateUrl: "app/components/phone-list.component.html",
+    template: __webpack_require__(/*! ./phone-list.component.html */ "./src/app/components/phone-list.component.html"),
+    //templateUrl: "app/components/phone-list.component.html", // BAD - not relative...
     controller: PhoneListController,
     bindings: {
         value: '='

@@ -14,7 +14,8 @@ export class PhoneListController implements IController {
 
 // CDO Component Definition Object.
 export let PhoneListComponent : ng.IComponentOptions = {
-    templateUrl: "app/components/phone-list.component.html", // BAD - not relative...
+    template: require('./phone-list.component.html'),
+    //templateUrl: "app/components/phone-list.component.html", // BAD - not relative...
     controller: PhoneListController,
     bindings: {
         value: '='

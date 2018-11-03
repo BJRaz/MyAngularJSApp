@@ -14,6 +14,7 @@ export class NavbarController implements IController {
 
 // CDO Component Definition Object. BJR
 export let NavbarComponent : ng.IComponentOptions = {
-    templateUrl: "app/components/navbar.component.html", // BAD - not relative...
+    template: require('./navbar.component.html'),
+    //templateUrl: "app/components/navbar.component.html", // BAD - not relative...
     controller: NavbarController
 };

@@ -5,6 +5,7 @@ import { PhoneListController, PhoneListComponent } from "./components/phone-list
 import { MyController } from "./controllers/my.controller";
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
+import { NavbarComponent } from "./components/navbar.component";
 
 export let x = 8660;
 
@@ -18,12 +19,15 @@ export class AppModule
         angular.module("myapp.directives", [])
             .directive("test", TestDirectiveFactory);
 
-        angular.module("myapp.components", []).component("phoneListComponent", PhoneListComponent);
+        angular.module("myapp.components", [])
+            .component("navbarComponent", NavbarComponent)
+            .component("phoneListComponent", PhoneListComponent);
 
         var app = angular.module("app",[
             "ui.router",
             "myapp.controllers", 
-            "myapp.directives"
+            "myapp.directives",
+            "myapp.components"
         ])
             .controller("appcontroller", AppController);
 

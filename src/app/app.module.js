@@ -6,6 +6,7 @@ const phone_list_component_1 = require("./components/phone-list.component");
 const my_controller_1 = require("./controllers/my.controller");
 const app_controller_1 = require("./app.controller");
 const test_1 = require("./directives/test");
+const navbar_component_1 = require("./components/navbar.component");
 exports.x = 8660;
 class AppModule {
     static init() {
@@ -14,11 +15,14 @@ class AppModule {
             .controller("phonelistcontroller", phone_list_component_1.PhoneListController);
         angular.module("myapp.directives", [])
             .directive("test", test_1.TestDirectiveFactory);
-        angular.module("myapp.components", []).component("phoneListComponent", phone_list_component_1.PhoneListComponent);
+        angular.module("myapp.components", [])
+            .component("navbarComponent", navbar_component_1.NavbarComponent)
+            .component("phoneListComponent", phone_list_component_1.PhoneListComponent);
         var app = angular.module("app", [
             "ui.router",
             "myapp.controllers",
-            "myapp.directives"
+            "myapp.directives",
+            "myapp.components"
         ])
             .controller("appcontroller", app_controller_1.AppController);
         app.config(($stateProvider, $urlRouterProvider, $locationProvider) => {

@@ -11,6 +11,7 @@
     </head>
     <body>
         <base href="/" />
+        <navbar-component></navbar-component>
         <div class="container"  ng-controller="appcontroller">
                 Hej "scope.x": {{10 + x}}
                 <br>
@@ -26,7 +27,7 @@
                         <td>{{item.lastname}}</td>
                     </tr>
                 </table>
-                
+                <phone-list-component value="$items"></phone-list-component>
         </div>
         
         
