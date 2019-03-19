@@ -1,4 +1,4 @@
-# My Angular App
+# My AngularJS App
 
 ###
 
