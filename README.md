@@ -1,5 +1,5 @@
-# Simple Angular App
+# My Angular App
 
 ###
 
-Just a small research project...
+Just a small AngularJS / Webpack research project...
