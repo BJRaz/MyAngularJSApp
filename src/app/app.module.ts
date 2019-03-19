@@ -39,10 +39,14 @@ export class AppModule
             
             $locationProvider.html5Mode(true);
             
-            $stateProvider.state("hex", {
+            var hexState = {
+                name: "hex",
                 url: "/hex",
-                template: "<h1>HEX</h1>"
-            });
+                template: "<h1>HEX HEX</h1>"
+            }
+            
+
+            $stateProvider.state(hexState);
 
             $urlRouterProvider.otherwise("/");
         });   
