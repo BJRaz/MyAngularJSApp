@@ -6,7 +6,6 @@ export class AppController {
         $scope.x = 1000;
     
         $scope.$items = [
-            {name: "Brian", lastname:"Rasmussen"}, 
             {name: "Jane", lastname: "Hansen"}
         ];
     

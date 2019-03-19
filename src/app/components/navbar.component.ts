@@ -1,5 +1,4 @@
 import { IController } from "angular";
-import * as template from "navbar.component.html!text";
 
 export class NavbarController implements IController {
     
@@ -14,7 +13,6 @@ export class NavbarController implements IController {
 
 // CDO Component Definition Object. BJR
 export let NavbarComponent : ng.IComponentOptions = {
-    template: require('./navbar.component.html'),
-    //templateUrl: "app/components/navbar.component.html", // BAD - not relative...
+    template: require('./navbar.component.html'),    
     controller: NavbarController
 };

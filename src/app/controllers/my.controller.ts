@@ -11,7 +11,7 @@ export class MyController {
     constructor(protected $scope: ng.IScope, $http: IHttpService, $q: IQService) {
         this.$service = new MyService($http, $q);
         $scope.$watch(() => this.x,(newvalue: any, oldvalue: any) => {
-            console.log("HEJ");
+            
             console.log(oldvalue);
             console.log(newvalue);                
         });

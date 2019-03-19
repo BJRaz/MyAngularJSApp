@@ -1,10 +1,15 @@
 import { IController } from "angular";
 
-
 export class PhoneListController implements IController {
+    items: any;
+
     name : string;
     constructor() {
-        this.name = "Brian";
+        this.name = "PhoneListController";
+
+        this.items = [
+            {name: "Mobile Phone", price: 100}
+        ];
     }
 
     $onInit() {
@@ -14,10 +19,9 @@ export class PhoneListController implements IController {
 
 // CDO Component Definition Object.
 export let PhoneListComponent : ng.IComponentOptions = {
-    template: require('./phone-list.component.html'),
-    //templateUrl: "app/components/phone-list.component.html", // BAD - not relative...
+    template: require('./phone-list.component.html'),    // by use of webpack html-loader...    
     controller: PhoneListController,
     bindings: {
-        value: '='
+        value: '<'
     }
 };

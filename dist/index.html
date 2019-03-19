@@ -12,31 +12,27 @@
     <body>
         <base href="/" />
         <navbar-component></navbar-component>
-        <div class="container"  ng-controller="appcontroller">
-                Hej "scope.x": {{10 + x}}
-                <br>
-                Brian {{x}}
-                <br>
-                <test></test>
         
-                <div ui-view></div>
-
-                <table class="table table-responsive">
-                    <tr ng-repeat="item in $items">
-                        <td>{{item.name}}</td>
-                        <td>{{item.lastname}}</td>
-                    </tr>
-                </table>
-                <phone-list-component value="$items"></phone-list-component>
+        <div class="container"  ng-controller="appcontroller">            
+            <div ui-view></div>
+            
+            <!-- 
+            <table class="table table-responsive">
+                <tr ng-repeat="item in $items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.lastname}}</td>
+                </tr>
+            </table>
+            <phone-list-component value="$items"></phone-list-component> -->
         </div>
         
         
-            <!-- <script>
-                
-                SystemJS.import("app.js").then(() => {
-                    console.log("OK");
-                });
-            </script> -->
-            <script src="bundle.js"></script>
+        <!-- <script>
+            
+            SystemJS.import("app.js").then(() => {
+                console.log("OK");
+            });
+        </script> -->
+        <script src="bundle.js"></script>
     </body>
 </html>
