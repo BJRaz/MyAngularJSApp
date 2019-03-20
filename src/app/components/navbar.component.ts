@@ -1,6 +1,6 @@
 import { IController } from "angular";
 
-export class NavbarController implements IController {
+class NavbarController implements IController {
     
     constructor() {
     

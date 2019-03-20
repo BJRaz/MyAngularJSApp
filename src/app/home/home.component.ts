@@ -1,6 +1,6 @@
 import { IController } from "angular";
 
-export class HomeController implements IController {
+class HomeController implements IController {
     name : string;
     constructor() {
         this.name = "Home...";

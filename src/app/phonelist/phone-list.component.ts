@@ -1,6 +1,6 @@
 import { IController } from "angular";
 
-export class PhoneListController implements IController {
+class PhoneListController implements IController {
     items: any;
 
     name : string;

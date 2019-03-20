@@ -1,34 +1,35 @@
-import * as angular from "angular"
-import "@uirouter/angularjs"    // force loads ui.router module
+import * as angular from "angular";
+import "@uirouter/angularjs";    // force loads ui.router module
+import "./phonelist/phone-list.module";
+import "./controllers/myapp.controllers.module";
+import "./home/home.module";
 import * as uirouter from "@uirouter/angularjs";
-import { PhoneListController, PhoneListComponent } from "./components/phonelist/phone-list.component";
-import { MyController } from "./controllers/my.controller";
+
+
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
 import { NavbarComponent } from "./components/navbar.component";
-import { HomeComponent } from "./components/home/home.component";
+
 
 export let x = 8660;
 
 export class AppModule
 {
     public static init(): void {
-
-        angular.module("myapp.controllers", [])
-            .controller("mycontroller", MyController)
+ 
         angular.module("myapp.directives", [])
             .directive("test", TestDirectiveFactory);
 
         angular.module("myapp.components", [])
-            .component("navbarComponent", NavbarComponent)
-            .component("phoneListComponent", PhoneListComponent)
-            .component("homeComponent", HomeComponent);
+            .component("navbarComponent", NavbarComponent) 
 
         var app = angular.module("app",[
             "ui.router",
             "myapp.controllers", 
             "myapp.directives",
-            "myapp.components"
+            "myapp.components",
+            "phone-list.module",
+            "home.module"
         ])
             .controller("appcontroller", AppController);
 
@@ -49,13 +50,13 @@ export class AppModule
             var phoneListState = {
                 name: "phonelist",
                 url: "/phonelist",
-                component: "phoneListComponent"
+                component: "phonelistcomponent"
             };
 
             var homeState = {
                 name: "home",
                 url: "/",
-                component: "homeComponent"
+                component: "homecomponent"
             };
 
             $stateProvider.state(homeState);

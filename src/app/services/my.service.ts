@@ -1,5 +1,5 @@
 import { BaseService } from "../services/base.service";
-import { IQService, IHttpService } from "angular";
+import { IQService, IHttpService, IPromise } from "angular";
 
 
 export class MyService extends BaseService
@@ -8,5 +8,9 @@ export class MyService extends BaseService
 
     constructor($http : IHttpService, $q: IQService) {
         super($http,$q);
+    }
+
+    public getData() : any {
+        return 0;
     }
 }
