@@ -9,8 +9,6 @@ import * as uirouter from "@uirouter/angularjs";
 
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
-import { NavbarComponent } from "./components/navbar.component";
-
 
 export let x = 8660;
 
@@ -21,14 +19,11 @@ export class AppModule
         angular.module("myapp.directives", [])
             .directive("test", TestDirectiveFactory);
 
-        angular.module("myapp.components", [])
-            .component("navbarComponent", NavbarComponent) 
-
+        
         var app = angular.module("app",[
             "ui.router",
             "myapp.controllers", 
             "myapp.directives",
-            //"myapp.components",
             "components.module", 
             "phone-list.module",
             "home.module"
