@@ -3,6 +3,7 @@ import "@uirouter/angularjs";    // force loads ui.router module
 import "./phonelist/phone-list.module";
 import "./controllers/myapp.controllers.module";
 import "./home/home.module";
+import "./components/components.module";
 import * as uirouter from "@uirouter/angularjs";
 
 
@@ -27,7 +28,8 @@ export class AppModule
             "ui.router",
             "myapp.controllers", 
             "myapp.directives",
-            "myapp.components",
+            //"myapp.components",
+            "components.module", 
             "phone-list.module",
             "home.module"
         ])
