@@ -9,6 +9,7 @@ import * as uirouter from "@uirouter/angularjs";
 
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
+import { MyService } from "./services/my.service";
 
 export let x = 8660;
 
@@ -28,7 +29,8 @@ export class AppModule
             "phone-list.module",
             "home.module"
         ])
-            .controller("appcontroller", AppController);
+            .controller("appcontroller", AppController)
+            .service("service", MyService);
 
 
         app.config(($stateProvider: uirouter.StateProvider, 
@@ -47,13 +49,19 @@ export class AppModule
             var phoneListState = {
                 name: "phonelist",
                 url: "/phonelist",
-                component: "phonelistcomponent"
+                component: "phonelistcomponent",
+                resolve: {
+                    value: function(service: MyService)  
+                    {
+                        return service.getData();
+                    }   
+                }
             };
 
             var homeState = {
                 name: "home",
                 url: "/",
-                component: "homecomponent"
+                component: "homecomponent"                
             };
 
             $stateProvider.state(homeState);

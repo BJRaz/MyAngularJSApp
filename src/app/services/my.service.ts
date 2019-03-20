@@ -11,6 +11,6 @@ export class MyService extends BaseService
     }
 
     public getData() : any {
-        return 0;
+        return [{name: "Mobile Phone", price: 100}];
     }
 }

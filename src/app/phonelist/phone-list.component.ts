@@ -8,7 +8,7 @@ class PhoneListController implements IController {
         this.name = "PhoneListController";
 
         this.items = [
-            {name: "Mobile Phone", price: 100}
+            
         ];
     }
 

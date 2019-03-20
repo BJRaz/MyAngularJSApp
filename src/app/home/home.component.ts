@@ -16,6 +16,6 @@ export let HomeComponent : ng.IComponentOptions = {
     template: require('./home.component.html'),    
     controller: HomeController,
     bindings: {
-        value: '='
+        value: '<'
     }
 };
