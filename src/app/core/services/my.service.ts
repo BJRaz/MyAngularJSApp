@@ -1,5 +1,6 @@
 import { BaseService } from "../services/base.service";
 import { IQService, IHttpService, IPromise } from "angular";
+import { isInjectable } from "@uirouter/core";
 
 
 export class MyService extends BaseService
@@ -12,5 +13,11 @@ export class MyService extends BaseService
 
     public getData() : any {
         return [{name: "Mobile Phone", price: 100}];
+    }
+}
+
+export class MyServiceFactory {
+    $get() {
+        return MyService;
     }
 }

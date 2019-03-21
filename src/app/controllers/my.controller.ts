@@ -1,4 +1,4 @@
-import { MyService } from "../services/my.service";
+import { MyService } from "../core/services/my.service";
 import { IHttpService, IQService } from "angular";
 import { testMe } from "./my.controller.test";
 

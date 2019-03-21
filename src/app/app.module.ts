@@ -3,13 +3,14 @@ import "@uirouter/angularjs";    // force loads ui.router module
 import "./phonelist/phone-list.module";
 import "./controllers/myapp.controllers.module";
 import "./home/home.module";
-import "./components/components.module";
+import "./core/core.module";
+
 import * as uirouter from "@uirouter/angularjs";
 
 
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
-import { MyService } from "./services/my.service";
+import { MyService } from "./core/services/my.service";
 
 export let x = 8660;
 
@@ -25,7 +26,7 @@ export class AppModule
             "ui.router",
             "myapp.controllers", 
             "myapp.directives",
-            "components.module", 
+            "core.module", 
             "phone-list.module",
             "home.module"
         ])
@@ -46,10 +47,16 @@ export class AppModule
                 template: "<h1>HEX HEX</h1>"
             }
 
+            var phoneViewState = {
+                name: "phoneview",                
+                component: "phoneView"
+            };
+
             var phoneListState = {
                 name: "phonelist",
-                url: "/phonelist",
-                component: "phonelistcomponent",
+                //url: "/phonelist",
+                parent: phoneViewState,
+                component: "phoneList",
                 resolve: {
                     value: function(service: MyService)  
                     {
@@ -64,8 +71,12 @@ export class AppModule
                 component: "homecomponent"                
             };
 
+            
+
             $stateProvider.state(homeState);
             $stateProvider.state(hexState);
+            
+            $stateProvider.state(phoneViewState);
             $stateProvider.state(phoneListState);
 
 
