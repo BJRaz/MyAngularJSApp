@@ -1,15 +1,10 @@
 import { IController } from "angular";
 
 class PhoneViewController implements IController {
-    items: any;
-
     name : string;
     constructor() {
         this.name = "PhoneViewController";
 
-        this.items = [
-            
-        ];
     }
 
     $onInit() {

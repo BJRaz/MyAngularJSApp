@@ -34,10 +34,8 @@ export class AppModule
             .service("service", MyService);
 
 
-        app.config(($stateProvider: uirouter.StateProvider, 
-            $urlRouterProvider: uirouter.UrlRouterProvider,
-        $locationProvider: ng.ILocationProvider) => {
-            console.log($stateProvider);
+        // setup states...
+        app.config(($stateProvider: uirouter.StateProvider, $urlRouterProvider: uirouter.UrlRouterProvider, $locationProvider: ng.ILocationProvider) => {
             
             $locationProvider.html5Mode(true);
             
@@ -81,6 +79,7 @@ export class AppModule
 
 
             $urlRouterProvider.otherwise("/");
+            
         });   
     }
 }

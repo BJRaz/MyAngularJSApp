@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
+    "start": "live-server dist/ &",
     "hest": "echo hest"
   },
   "author": "Brian Juul Rasmussen",
@@ -18,7 +19,7 @@
     "bootstrap": "^4.3.1",
     "html-loader": "^0.5.5",
     "jquery": "^3.3.1",
-    "popper.js": "^1.14.4",
+    "popper.js": "^1.14.7",
     "systemjs": "^0.21.4",
     "ts-loader": "^5.3.0",
     "typescript": "^2.6.1"

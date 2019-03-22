@@ -1,27 +1,27 @@
 import { IController } from "angular";
+import { StateService } from "@uirouter/core";
 
 class PhoneListController implements IController {
-    items: any;
-
+    
     name : string;
-    constructor() {
-        this.name = "PhoneListController";
-
-        this.items = [
-            
-        ];
+    constructor(private $state: StateService) {
+        this.name = "PhoneListController";   
     }
 
-    $onInit() {
+    $onInit() {        
         console.log("COMPONENT onInit has been called " + this.name);
+    }
+
+    public testState() : void {        
+        this.$state.go("home");
     }
 }
 
 // CDO Component Definition Object.
-export let PhoneListComponent : ng.IComponentOptions = {
+export const PhoneListComponent : ng.IComponentOptions = {
     template: require('./phone-list.component.html'),    // by use of webpack html-loader...    
     controller: PhoneListController,
     bindings: {
-        value: '<'
+        value: '<'                                      // from resolver in state...
     }
 };

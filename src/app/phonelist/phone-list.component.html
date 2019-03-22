@@ -10,11 +10,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in $ctrl.value">
+                    <tr ng-repeat="item in $ctrl.value">    <!-- value is populated from resolver ... -->
                         <td>{{item.name}}</td>
                         <td>{{item.price}}</td>
                     </tr>
                 </tbody>        
             </table>    
+    </div>
+    <div>
+        <button type="button" ng-click="$ctrl.testState()">Go 2 home state</button>
     </div>
 </div>
