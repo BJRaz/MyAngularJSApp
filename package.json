@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
-    "start": "live-server dist/ &",
+    "start": "live-server dist/",
     "hest": "echo hest"
   },
   "author": "Brian Juul Rasmussen",

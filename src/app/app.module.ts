@@ -1,16 +1,16 @@
 import * as angular from "angular";
 import "@uirouter/angularjs";    // force loads ui.router module
-import "./phonelist/phone-list.module";
-import "./controllers/myapp.controllers.module";
-import "./home/home.module";
-import "./core/core.module";
+import {PhoneListModule} from "./phones/phone.module";
+import {MyappControllerModule} from "./controllers/myapp.controllers.module";
+import {HomeModule} from "./home/home.module";
+import {CoreModule} from "./core/core.module";
 
 import * as uirouter from "@uirouter/angularjs";
 
 
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
-import { MyService } from "./core/services/my.service";
+
 
 export let x = 8660;
 
@@ -23,15 +23,15 @@ export class AppModule
 
         
         var app = angular.module("app",[
-            "ui.router",
-            "myapp.controllers", 
+            "ui.router",            
             "myapp.directives",
-            "core.module", 
-            "phone-list.module",
-            "home.module"
+            MyappControllerModule.name, 
+            CoreModule.name, 
+            PhoneListModule.name,
+            HomeModule.name
         ])
             .controller("appcontroller", AppController)
-            .service("service", MyService);
+           
 
 
         // setup states...
@@ -45,39 +45,15 @@ export class AppModule
                 template: "<h1>HEX HEX</h1>"
             }
 
-            var phoneViewState = {
-                name: "phoneview",                
-                component: "phoneView"
-            };
-
-            var phoneListState = {
-                name: "phonelist",
-                //url: "/phonelist",
-                parent: phoneViewState,
-                component: "phoneList",
-                resolve: {
-                    value: function(service: MyService)  
-                    {
-                        return service.getData();
-                    }   
-                }
-            };
-
             var homeState = {
                 name: "home",
                 url: "/",
                 component: "homecomponent"                
             };
 
-            
-
             $stateProvider.state(homeState);
             $stateProvider.state(hexState);
             
-            $stateProvider.state(phoneViewState);
-            $stateProvider.state(phoneListState);
-
-
             $urlRouterProvider.otherwise("/");
             
         });   
