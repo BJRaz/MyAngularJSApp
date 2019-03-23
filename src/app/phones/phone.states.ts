@@ -4,16 +4,16 @@ export const phoneListState = {
     name: "phonelist",
     //url: "/phonelist",
     parent: "phoneview",
-    component: "phoneList",
-    resolve: {
-        value: function(phonesservice: PhonesService)  
-        {
-            return phonesservice.getData();
-        }   
-    }
+    component: "phoneList"
 };
 
 export const phoneViewState = {
     name: "phoneview",                
-    component: "phoneView"
+    component: "phoneView",
+    resolve: {
+        data: function(phonesservice: PhonesService)  
+        {
+            return phonesservice.getData();
+        }   
+    }
 };
