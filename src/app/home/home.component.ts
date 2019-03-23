@@ -12,7 +12,7 @@ class HomeController implements IController {
 }
 
 // CDO Component Definition Object.
-export let HomeComponent : ng.IComponentOptions = {
+export const HomeComponent : ng.IComponentOptions = {
     template: require('./home.component.html'),    
     controller: HomeController,
     bindings: {

@@ -12,7 +12,7 @@ class NavbarController implements IController {
 }
 
 // CDO Component Definition Object. BJR
-export let NavbarComponent : ng.IComponentOptions = {
+export const NavbarComponent : ng.IComponentOptions = {
     template: require('./navbar.component.html'),    
     controller: NavbarController
 };

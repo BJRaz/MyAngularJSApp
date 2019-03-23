@@ -13,7 +13,7 @@ class PhoneViewController implements IController {
 }
 
 // CDO Component Definition Object.
-export let PhoneViewComponent : ng.IComponentOptions = {
+export const PhoneViewComponent : ng.IComponentOptions = {
     template: require('./phone-view.component.html'),    // by use of webpack html-loader...    
     controller: PhoneViewController,
     bindings: {

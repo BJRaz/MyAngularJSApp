@@ -7,12 +7,16 @@
                     <tr>
                         <th>Name</th>
                         <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Image</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in $ctrl.value">    <!-- value is populated from resolver ... -->
                         <td>{{item.name}}</td>
-                        <td>{{item.price}}</td>
+                        <td style="text-align: right">{{item.price}}</td>
+                        <td style="text-align: right">{{item.quantity}}</td>
+                        <td>{{item.image}}</td>
                     </tr>
                 </tbody>        
             </table>    

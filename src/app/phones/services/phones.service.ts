@@ -11,7 +11,16 @@ export class PhonesService extends BaseService
     }
 
     public getData() : any {
-        return [{name: "Mobile Phone", price: 100}];
+        return [
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""},
+            {name: "Samsoon Phone", price: 100, quantity: 25, image:""}
+        ];
     }
 }
 
