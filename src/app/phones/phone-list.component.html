@@ -12,11 +12,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in $ctrl.value track by $index">    <!-- value is populated from resolver ... -->
+                    <tr ng-repeat="item in $ctrl.data track by $index">    <!-- value is populated from resolver ... -->
                         <td>{{item.name}}</td>
                         <td style="text-align: right">{{item.price}}</td>
                         <td style="text-align: right">{{item.quantity}}</td>
-                        <td  ng-click="$ctrl.edit($index)"><i class="far fa-edit"></i></td>
+                        <td><a ui-sref="phoneedit({idx:$index})"><i class="far fa-edit"></i></a></td>
+                        <!-- <td ng-click="$ctrl.edit($index)"><i class="far fa-edit"></i></td> -->
                     </tr>
                 </tbody>        
             </table>    
