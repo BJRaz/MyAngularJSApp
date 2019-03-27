@@ -21,5 +21,6 @@ export const phoneEditState = {
     name: "phoneedit",
     url: "/edit/{idx}",
     parent: "phoneview",
-    component: "phoneEdit"    
+    component: "phoneEdit",
+        
 };

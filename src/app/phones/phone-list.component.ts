@@ -1,5 +1,6 @@
 import { IController, IComponentController } from "angular";
 import { StateService } from "@uirouter/core";
+import { Phone } from "./models/phone";
 
 interface IPhoneListController {
     onEdit: (item: any) => void;
@@ -7,7 +8,7 @@ interface IPhoneListController {
 
 class PhoneListController implements IPhoneListController, IController {
     onEdit: (item: any) => void = () => {}; // dummy assignment ( as function pointer), will be used when bindings are added to controller
-    data: Array<any>;
+    data: Array<Phone>;
     
     name : string;
     constructor(private $state: StateService) {

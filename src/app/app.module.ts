@@ -1,11 +1,12 @@
 import * as angular from "angular";
 import "@uirouter/angularjs";    // force loads ui.router module
+import * as uirouter from "@uirouter/angularjs";
 import {PhoneListModule} from "./phones/phone.module";
 import {MyappControllerModule} from "./controllers/myapp.controllers.module";
 import {HomeModule} from "./home/home.module";
 import {CoreModule} from "./core/core.module";
 
-import * as uirouter from "@uirouter/angularjs";
+
 
 
 import { AppController } from "./app.controller";
@@ -23,7 +24,7 @@ export class AppModule
 
         
         var app = angular.module("app",[
-            "ui.router",            
+            "ui.router",
             "myapp.directives",
             MyappControllerModule.name, 
             CoreModule.name, 
