@@ -22,5 +22,9 @@ export const phoneEditState = {
     url: "/edit/{idx}",
     parent: "phoneview",
     component: "phoneEdit",
-        
+    resolve: {
+        phone: (phonesservice: PhonesService, $stateParams : StateParams) => {           
+            return phonesservice.getById($stateParams["idx"]);
+        }
+    }    
 };

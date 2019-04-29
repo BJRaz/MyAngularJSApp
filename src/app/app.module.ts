@@ -23,7 +23,7 @@ export class AppModule
             .directive("test", TestDirectiveFactory);
 
         
-        var app = angular.module("app",[
+        angular.module("app",[
             "ui.router",
             "myapp.directives",
             MyappControllerModule.name, 
@@ -31,13 +31,9 @@ export class AppModule
             PhoneListModule.name,
             HomeModule.name
         ])
-            .controller("appcontroller", AppController)
-           
-
-
-        // setup states...
-        app.config(($stateProvider: uirouter.StateProvider, $urlRouterProvider: uirouter.UrlRouterProvider, $locationProvider: ng.ILocationProvider) => {
-            
+        .controller("appcontroller", AppController)
+        .config(($stateProvider: uirouter.StateProvider, $urlRouterProvider: uirouter.UrlRouterProvider, $locationProvider: ng.ILocationProvider) => {
+            // setup states...    
             $locationProvider.html5Mode(true);
             
             var hexState = {
