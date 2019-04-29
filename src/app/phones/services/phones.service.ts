@@ -13,7 +13,7 @@ export class PhonesService extends BaseService {
         super($http,$q);
     }
 
-    public getData() : Phone[] {
+    public getAll() : Phone[] {
         return this.data;
     }
 

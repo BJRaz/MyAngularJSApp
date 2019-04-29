@@ -13,7 +13,7 @@ export const phoneListState = {
     parent: "phoneview",
     component: "phoneList",
     resolve: {
-        data: (phonesservice: PhonesService) => phonesservice.getData()   
+        data: (phonesservice: PhonesService) => phonesservice.getAll()   
     }
 };
 

@@ -5,10 +5,6 @@ import {PhoneListModule} from "./phones/phone.module";
 import {MyappControllerModule} from "./controllers/myapp.controllers.module";
 import {HomeModule} from "./home/home.module";
 import {CoreModule} from "./core/core.module";
-
-
-
-
 import { AppController } from "./app.controller";
 import { TestDirectiveFactory } from "./directives/test";
 
@@ -36,13 +32,13 @@ export class AppModule
             // setup states...    
             $locationProvider.html5Mode(true);
             
-            var hexState = {
+            let hexState = {
                 name: "hex",
                 url: "/hex",
                 template: "<h1>HEX HEX</h1>"
             }
 
-            var homeState = {
+            let homeState = {
                 name: "home",
                 url: "/",
                 component: "homecomponent"                
