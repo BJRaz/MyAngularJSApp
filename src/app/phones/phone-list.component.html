@@ -1,28 +1,26 @@
-<div class="row">
-    <div class="col-md-12">
-            <!-- <span>Phone list</span> -->
-            <!-- <pre>{{$ctrl | json}}</pre> -->
-            <table class="table table-responsive table-striped">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Image</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in $ctrl.data track by $index">    <!-- value is populated from resolver ... -->
-                        <td>{{item.name}}</td>
-                        <td style="text-align: right">{{item.price}}</td>
-                        <td style="text-align: right">{{item.quantity}}</td>
-                        <td><a ui-sref="phoneedit({idx:item.id})"><i class="far fa-edit"></i></a></td>
-                        <!-- <td ng-click="$ctrl.edit($index)"><i class="far fa-edit"></i></td> -->
-                    </tr>
-                </tbody>        
-            </table>    
-    </div>
-    <div>
-        <button type="button" ng-click="$ctrl.testState()">Go 2 home state</button>
-    </div>
+<div class="col-md-6">
+        <!-- <span>Phone list</span> -->
+        <!-- <pre>{{$ctrl | json}}</pre> -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in $ctrl.data track by $index">    <!-- value is populated from resolver ... -->
+                    <td>{{item.name}}</td>
+                    <td style="text-align: right">{{item.price}}</td>
+                    <td style="text-align: right">{{item.quantity}}</td>
+                    <td><a ui-sref="phoneedit({idx:item.id})"><i class="far fa-edit"></i></a></td>
+                    <!-- <td ng-click="$ctrl.edit($index)"><i class="far fa-edit"></i></td> -->
+                </tr>
+            </tbody>        
+        </table>    
+</div>
+<div>
+    <button type="button" ng-click="$ctrl.testState()">Go 2 home state</button>
 </div>
