@@ -2,8 +2,8 @@ import { IPromise, IHttpService, IQService } from "angular";
 
 export class BaseService
 {
-    private $q : IQService;
-    private $http: IHttpService;
+    protected $q : IQService;
+    protected $http: IHttpService;
     /**
      *
      */

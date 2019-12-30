@@ -14,6 +14,9 @@ export class PhonesService extends BaseService {
     }
 
     public getAll() : Phone[] {
+        this.$http.get("http://localhost:5000/api/info").then(d => {
+            console.log(d);
+        })
         return this.data;
     }
 
