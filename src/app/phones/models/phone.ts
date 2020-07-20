@@ -1,7 +1,6 @@
 export class Phone {
-    name: string;
-    id: number;
-    price: number;   
-    image:string;
-    
+    name: string = "";
+    id: number = 0;
+    price: number = 0;   
+    image:string = "";
 };

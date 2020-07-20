@@ -12,27 +12,27 @@
   "author": "Brian Juul Rasmussen",
   "license": "ISC",
   "dependencies": {
-    "@types/angular": "^1.6.57",
-    "@types/requirejs": "^2.1.31",
-    "@uirouter/angularjs": "^1.0.23",
+    "@types/angular": "^1.7.2",
+    "@types/requirejs": "^2.1.32",
+    "@uirouter/angularjs": "^1.0.26",
     "angular": "^1.8.0",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "html-loader": "^0.5.5",
     "jquery": "^3.5.0",
-    "popper.js": "^1.16.0",
+    "popper.js": "^1.16.1",
     "systemjs": "^0.21.6",
     "ts-loader": "^5.4.5",
     "typescript": "^2.9.2"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.3",
+    "autoprefixer": "^9.8.5",
     "css-loader": "^1.0.1",
     "live-server": "^1.2.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }
