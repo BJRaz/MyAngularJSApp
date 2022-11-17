@@ -2,7 +2,7 @@
 
 build/
 dist/bundle.js
-node_modules/*
+node_modules
 .vscode/*
 *.js
 *.map

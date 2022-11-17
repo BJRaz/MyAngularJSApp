@@ -3,7 +3,7 @@ import { IController } from "angular";
 class HomeController implements IController {
     name : string;
     constructor() {
-        this.name = "Home...";
+        this.name = "[HER]";
     }
 
     $onInit() {
